@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	data-layout-decorate="~{fragments/layoutDatatable}">
+<head>
+<title>Kayıtlar</title>
+</head>
+<body>
+
+	<div class="right_col" role="main" data-layout-fragment="content">
+		<div class="">
+			<div class="page-title">
+				<div class="title_left">
+					<h3>İhtiyaç Sahipleri</h3>
+				</div>
+
+
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Kayıtlar</h2>
+
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<p class="text-muted font-13 m-b-30"></p>
+							<table id="datatable-buttons"
+								class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Tc</th>
+										<th>Adı</th>
+										<th>Soyadı</th>
+										<th>Kişi Sayısı</th>
+										<th>İkamet Adresi</th>
+										<th>Dağıtım Adresi</th>
+										<th>Düzenle</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr th:each="needy : ${listNeedy}">
+										<td th:text="${needy.kimlikNo}"></td>
+										<td th:text="${needy.isim}"></td>
+										<td th:text="${needy.soyisim}"></td>
+										<td th:text="${needy.kisiSayisi}"></td>
+										<td th:text="${needy.ikametAdr}"></td>
+										<td th:text="${needy.dagitimAdr}"></td>
+										<td><a href="">Güncellle</a> / <a href="">Sil</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
